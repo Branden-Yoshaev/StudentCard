@@ -75,6 +75,7 @@ public class Student {
     private void setlistOfFavActivities {
 
     }
+
     /**
      * Returning valid list for favourite activities
      * @return
@@ -97,5 +98,14 @@ public class Student {
 
     private int getStudentNum() {
         return studentNum;
+    }
+
+    private void setImage() {
+        String filePath = String.format("image/Branden Picture.jpg");
+        this.image = new Image(filePath);
+    }
+
+    public Image getImage() {
+        return image;
     }
 }
