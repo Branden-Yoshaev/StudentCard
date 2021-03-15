@@ -17,52 +17,85 @@ public class Student {
      * @param firstName - example Branden
      * @param lastName - example Yoshaev
      * @param studentNum - example 1137913
-     * @param listOfFavActivities - example Dancing, running, golfing
+     * @param listOfFavActivities - example Dancing, running, golfing, Skydiving, Surfing, Traveling
      */
 
     public Student(String firstName, String lastName, String listOfFavActivities, int studentNum)
     {
         setFirstName(firstName);
         setLastName(lastName);
-        setValidlistOfFavActivities(listOfFavActivities);
+        setlistOfFavActivities(listOfFavActivities);
         setStudentNum(studentNum);
         setImage(image);
     }
 
     /**
-     * Set methods for first and last name
-     * and validates the first name
+     * Set methods for first name
+     * and validates the first name and makes first letter of the name to be capital as well as throws an exception if it doesn't have at least 2 characters
      * @param firstName
      */
 
     private void setFirstName(String firstName) {
         if (firstName.length() >= 2)
-            this.firstName = firstName;
+            if (Character.isUpperCase(firstName.charAt(0)))
+                 this.firstName = Character.toUpperCase(firstName.charAt(0)) + firstName.substring(1);
         else
                 throw new IllegalArgumentException(firstName + " is not a valid first name, must have at least 2 letters" );
     }
 
+    /**
+     *
+     * @return firstname
+     */
+    private String getFirstName() {
+        return firstName;
+    }
+
+    /**
+     * Set methods for last name
+     * and validates the last name, first letter of the lastname is a capital as well it throws an exception if doesn't have least 2 characters
+     * @param lastName
+     */
     private void setLastName(String lastName) {
         if (lastName.length() >= 2)
-            this.lastName = lastName;
+            if (Character.isUpperCase(lastName.charAt(0)))
+                this.lastName = Character.toUpperCase(lastName.charAt(0)) + lastName.substring(1);
         else
             throw new IllegalArgumentException(lastName + " is not a valid last name, must have at least 2 letters" );
     }
 
-
     /**
-     * Returning valid lst for favourite activities
+     *
+     * @return lastname
+     */
+    private String getLastName() {
+        return lastName;
+    }
+
+    private void setlistOfFavActivities {
+
+    }
+    /**
+     * Returning valid list for favourite activities
      * @return
      */
     private static List<String> getValidlistOfFavActivities() {
 
-        return Arrays.asList("Dancing", "Running", "Golfing");
+        return Arrays.asList("Dancing", "Running", "Golfing", "Skydiving", "Surfing", "Traveling");
     }
 
+    /**
+     * Make sure the number is between 1000000 and 9999999 if not throws an exception argument
+     * @param studentNum
+     */
         private void setStudentNum(int studentNum) {
         if (studentNum >= 1000000 && studentNum <= 9999999)
             this.studentNum = studentNum;
         else
             throw new IllegalArgumentException(studentNum + "this student number is not valid, must be in the range of 1000000 -> 9999999");
+    }
+
+    private int getStudentNum() {
+        return studentNum;
     }
 }
