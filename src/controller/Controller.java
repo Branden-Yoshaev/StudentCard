@@ -8,6 +8,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.image.ImageView;
 import model.Student;
 
+import javax.swing.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,12 +44,16 @@ public class Controller implements Initializable {
             private Label favActivities;
 
             @FXML
-            private ListView<?> listOfActivities;
+            private ListView<String> listOfActivities;
 
             private final List<String> ListOfActivities = new ArrayList<>(Arrays.asList("Dancing", "Running", "Golfing", "Skydiving", "Surfing", "Traveling"));
 
             private void updateLabels(Student updatedStudentCard) {
-                firstName.setText(updatedStudentCard.getFirstName());
+                firstName_Label.setText(updatedStudentCard.getFirstName());
+                lastName_Label.setText(updatedStudentCard.getLastName());
+                studentNum_Label.setText(String.valueOf(updatedStudentCard.getStudentNum()));
+                image.setImage(updatedStudentCard.getImage());
+                listOfActivities.getItems().addAll(ListOfActivities);
             }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
