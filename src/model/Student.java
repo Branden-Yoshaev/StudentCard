@@ -1,6 +1,7 @@
 package model;
 
-import java.awt.*;
+import javafx.scene.image.Image;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,13 +21,13 @@ public class Student {
      * @param listOfFavActivities - example Dancing, running, golfing, Skydiving, Surfing, Traveling
      */
 
-    public Student(String firstName, String lastName, String listOfFavActivities, int studentNum)
+    public Student(String firstName, String lastName, String listOfFavActivities, int studentNum, String imagePath)
     {
         setFirstName(firstName);
         setLastName(lastName);
 //        setlistOfFavActivities(listOfFavActivities);
         setStudentNum(studentNum);
-        setImage(image);
+        setImage(imagePath);
     }
 
 
@@ -102,8 +103,8 @@ public class Student {
         return studentNum;
     }
 
-    private void setImage(Image image) {
-        String filePath = String.format("image/Branden Picture.png");
+    private void setImage(String image) {
+        String filePath = String.format(image);
         this.image = new Image(filePath);
     }
 
