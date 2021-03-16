@@ -24,10 +24,12 @@ public class Student {
     {
         setFirstName(firstName);
         setLastName(lastName);
-        setlistOfFavActivities(listOfFavActivities);
+//        setlistOfFavActivities(listOfFavActivities);
         setStudentNum(studentNum);
         setImage(image);
     }
+
+
 
     /**
      * Set methods for first name
@@ -47,7 +49,7 @@ public class Student {
      *
      * @return firstname
      */
-    private String getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
@@ -68,19 +70,19 @@ public class Student {
      *
      * @return lastname
      */
-    private String getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    private void setlistOfFavActivities {
-
-    }
+//    private void setListOfFavActivities(String listOfFavActivities) {
+//
+//    }
 
     /**
      * Returning valid list for favourite activities
      * @return
      */
-    private static List<String> getValidlistOfFavActivities() {
+    public static List<String> getListOfFavActivities() {
 
         return Arrays.asList("Dancing", "Running", "Golfing", "Skydiving", "Surfing", "Traveling");
     }
@@ -96,12 +98,12 @@ public class Student {
             throw new IllegalArgumentException(studentNum + "this student number is not valid, must be in the range of 1000000 -> 9999999");
     }
 
-    private int getStudentNum() {
+    public int getStudentNum() {
         return studentNum;
     }
 
-    private void setImage() {
-        String filePath = String.format("image/Branden Picture.jpg");
+    private void setImage(Image image) {
+        String filePath = String.format("image/Branden Picture.png");
         this.image = new Image(filePath);
     }
 
