@@ -25,7 +25,7 @@ public class Student {
     {
         setFirstName(firstName);
         setLastName(lastName);
-//        setlistOfFavActivities(listOfFavActivities);
+      //setlistOfFavActivities(listOfFavActivities);
         setStudentNum(studentNum);
         setImage(imagePath);
     }
